@@ -140,7 +140,7 @@ class EqualizerViewModel(application: Application) : AndroidViewModel(applicatio
                 _autoEqReady.value = true
             } catch (e: Exception) {
                 DolbyConstants.dlog(TAG, "Error initializing AutoEQ: ${e.message}")
-                ToastHelper.showToast(ctx, "Failed to load AutoEQ profiles")
+                ToastHelper.showToast(ctx, ctx.getString(R.string.autoeq_load_failed_toast))
             } finally {
                 _isSearchLoading.value = false
             }
@@ -163,11 +163,11 @@ class EqualizerViewModel(application: Application) : AndroidViewModel(applicatio
 
                     applyAutoEqProfile(profile.name, profile.graphicEq)
                 } else {
-                    ToastHelper.showToast(ctx, "Failed to download profile for ${entry.name}")
+                    ToastHelper.showToast(ctx, ctx.getString(R.string.autoeq_download_failed_toast, entry.name))
                 }
             } catch (e: Exception) {
                 DolbyConstants.dlog(TAG, "Error downloading AutoEQ profile: ${e.message}")
-                ToastHelper.showToast(ctx, "Failed to download profile for ${entry.name}")
+                ToastHelper.showToast(ctx, ctx.getString(R.string.autoeq_download_failed_toast, entry.name))
             } finally {
                 _isSearchLoading.value = false
             }

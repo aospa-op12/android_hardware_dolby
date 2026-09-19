@@ -65,11 +65,11 @@ class AppProfileViewModel(application: Application) : AndroidViewModel(applicati
             try {
                 if (profile == -1) {
                     appProfileManager.removeAppProfile(packageName)
-                    ToastHelper.showToast(context, "Profile reset to default")
+                    ToastHelper.showToast(context, context.getString(R.string.profile_reset_toast))
                 } else {
                     appProfileManager.setAppProfile(packageName, profile)
                     val profileName = getProfileName(profile)
-                    ToastHelper.showToast(context, "Profile set to: $profileName")
+                    ToastHelper.showToast(context, context.getString(R.string.profile_set_toast, profileName))
                 }
                 loadApps()
             } catch (e: Exception) {
@@ -82,7 +82,7 @@ class AppProfileViewModel(application: Application) : AndroidViewModel(applicati
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 appProfileManager.removeAppProfile(packageName)
-                ToastHelper.showToast(context, "Profile removed")
+                ToastHelper.showToast(context, context.getString(R.string.profile_removed_toast))
                 loadApps()
             } catch (e: Exception) {
                 DolbyConstants.dlog(TAG, "Error removing app profile: ${e.message}")
@@ -94,7 +94,7 @@ class AppProfileViewModel(application: Application) : AndroidViewModel(applicati
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 appProfileManager.clearAllAppProfiles()
-                ToastHelper.showToast(context, "All app profiles cleared")
+                ToastHelper.showToast(context, context.getString(R.string.all_profiles_cleared_toast))
                 loadApps()
             } catch (e: Exception) {
                 DolbyConstants.dlog(TAG, "Error clearing app profiles: ${e.message}")

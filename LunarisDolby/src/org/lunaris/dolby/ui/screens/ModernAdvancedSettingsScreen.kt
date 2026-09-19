@@ -225,7 +225,7 @@ private fun ModernAdvancedSettingsContent(
             
             item {
                 ModernSettingsCard(
-                    title = "Volume Leveler",
+                    title = stringResource(R.string.volume_leveler_card_title),
                     icon = Icons.Default.VolumeDown
                 ) {
                     ModernSettingSwitch(
@@ -241,7 +241,7 @@ private fun ModernAdvancedSettingsContent(
             if (state.settings.currentProfile != 0) {
                 item {
                     ModernSettingsCard(
-                        title = "Surround Virtualizer",
+                        title = stringResource(R.string.surround_virtualizer_card_title),
                         icon = Icons.Default.Headphones
                     ) {
                         if (state.isOnSpeaker) {
@@ -279,7 +279,7 @@ private fun ModernAdvancedSettingsContent(
                 
                 item {
                     ModernSettingsCard(
-                        title = "Dialogue Enhancement",
+                        title = stringResource(R.string.dialogue_enhancement_card_title),
                         icon = Icons.Default.RecordVoiceOver
                     ) {
                         ModernSettingSwitch(

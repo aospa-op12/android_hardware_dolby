@@ -201,4 +201,55 @@
     <string name="dolby_autoeq_search">Search</string>
     <string name="dolby_autoeq_active">Active profile</string>
     <string name="dolby_autoeq_selected">Selected profile</string>
+
+    <!-- Additional UI strings -->
+    <string name="volume_leveler_card_title">Volume Leveler</string>
+    <string name="surround_virtualizer_card_title">Surround Virtualizer</string>
+    <string name="dialogue_enhancement_card_title">Dialogue Enhancement</string>
+    <string name="equalizer_view_title">Equalizer View</string>
+    <string name="curve_option">Curve</string>
+    <string name="sliders_option">Sliders</string>
+    <string name="intelligent_equalizer_title">Intelligent Equalizer</string>
+    <string name="delete_preset_title">Delete Preset</string>
+    <string name="credits_title">Credits &amp; Contributors</string>
+    <string name="credits_thank_you">Thank you to all contributors who made this project possible!</string>
+    <string name="view_on_github">View on GitHub</string>
+    <string name="main_contributors">Main Contributors</string>
+    <string name="translation_contributors">Translation Contributors</string>
+    <string name="missing_language">Missing your language?</string>
+    <string name="help_translate">Help us make Lunaris Dolby better in your language! Submit or update translations on GitHub.</string>
+    <string name="and_all_contributors">And all other contributors</string>
+    <string name="check_github_list">Check the GitHub repository for the complete list</string>
+    <string name="default_profile">Default</string>
+    <string name="close_button">Close</string>
+    <string name="submit_pull_request">Submit a Pull Request</string>
+    <string name="bands_option">Bands</string>
+    <string name="interactive_frequency_response">Interactive Frequency Response</string>
+    <string name="drag_control_points">Drag the control points to adjust gain (±15 dB) • %1$s</string>
+    <string name="frequency_response_readonly">Frequency Response (Read-only)</string>
+    <string name="readonly_band_mismatch">Read-only view • Band mode mismatch</string>
+    <string name="bands_count">%1$d bands</string>
+    <string name="preset_band_mismatch">This %1$s preset cannot be edited in %2$s mode. Switch to %3$s or select a compatible preset.</string>
+    <string name="delete_preset_confirm_message">Are you sure you want to delete \'%1$s\'? This will remove it from your preset list and cannot be undone.</string>
+    <string name="preset_deleted_toast">Preset \'%1$s\' deleted</string>
+
+    <!-- App Profile Toast Messages -->
+    <string name="profile_reset_toast">Profile reset to default</string>
+    <string name="profile_set_toast">Profile set to: %1$s</string>
+    <string name="profile_removed_toast">Profile removed</string>
+    <string name="all_profiles_cleared_toast">All app profiles cleared</string>
+
+    <!-- Preset Import/Export Toast Messages -->
+    <string name="preset_exported_toast">Preset exported successfully!</string>
+    <string name="export_failed_toast">Export failed: %1$s</string>
+    <string name="import_failed_toast">Import failed: %1$s</string>
+    <string name="batch_export_success_toast">%1$d presets exported!</string>
+    <string name="batch_export_failed_toast">Batch export failed: %1$s</string>
+    <string name="batch_import_failed_toast">Batch import failed: %1$s</string>
+    <string name="preset_imported_toast">Preset \'%1$s\' imported! (%2$s)</string>
+    <string name="batch_import_success_toast">Imported %1$d of %2$d presets</string>
+
+    <!-- AutoEQ Toast Messages -->
+    <string name="autoeq_load_failed_toast">Failed to load AutoEQ profiles</string>
+    <string name="autoeq_download_failed_toast">Failed to download profile for %1$s</string>
 </resources>

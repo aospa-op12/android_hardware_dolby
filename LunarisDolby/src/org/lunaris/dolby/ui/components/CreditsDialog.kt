@@ -39,6 +39,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.compose.ui.zIndex
@@ -46,6 +47,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.withContext
+import org.lunaris.dolby.R
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -166,7 +168,7 @@ fun CreditsDialog(
                         )
                         Spacer(modifier = Modifier.height(12.dp))
                         Text(
-                            text = "Credits & Contributors",
+                            text = stringResource(R.string.credits_title),
                             style = MaterialTheme.typography.headlineMedium,
                             fontWeight = FontWeight.SemiBold,
                             color = MaterialTheme.colorScheme.onPrimaryContainer
@@ -202,7 +204,7 @@ fun CreditsDialog(
                                 )
                                 Spacer(modifier = Modifier.width(12.dp))
                                 Text(
-                                    text = "Thank you to all contributors who made this project possible!",
+                                    text = stringResource(R.string.credits_thank_you),
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = MaterialTheme.colorScheme.onSecondaryContainer
                                 )
@@ -248,7 +250,7 @@ fun CreditsDialog(
                                 Spacer(modifier = Modifier.width(12.dp))
                                 Column(modifier = Modifier.weight(1f)) {
                                     Text(
-                                        text = "View on GitHub",
+                                        text = stringResource(R.string.view_on_github),
                                         style = MaterialTheme.typography.titleMedium,
                                         fontWeight = FontWeight.SemiBold,
                                         color = MaterialTheme.colorScheme.onPrimaryContainer
@@ -270,7 +272,7 @@ fun CreditsDialog(
                     }
                     item {
                         Text(
-                            text = "Main Contributors",
+                            text = stringResource(R.string.main_contributors),
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.SemiBold,
                             color = MaterialTheme.colorScheme.primary,
@@ -282,7 +284,7 @@ fun CreditsDialog(
                     }
                     item {
                         Text(
-                            text = "Translation Contributors",
+                            text = stringResource(R.string.translation_contributors),
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.SemiBold,
                             color = MaterialTheme.colorScheme.primary,
@@ -339,14 +341,14 @@ fun CreditsDialog(
                                     Spacer(modifier = Modifier.width(12.dp))
                                     Column(modifier = Modifier.weight(1f)) {
                                         Text(
-                                            text = "Missing your language?",
+                                            text = stringResource(R.string.missing_language),
                                             style = MaterialTheme.typography.titleMedium,
                                             fontWeight = FontWeight.SemiBold,
                                             color = MaterialTheme.colorScheme.onPrimaryContainer
                                         )
                                         Spacer(modifier = Modifier.height(2.dp))
                                         Text(
-                                            text = "Help us make Lunaris Dolby better in your language! Submit or update translations on GitHub.",
+                                            text = stringResource(R.string.help_translate),
                                             style = MaterialTheme.typography.bodySmall,
                                             color = MaterialTheme.colorScheme.onPrimaryContainer
                                         )
@@ -371,7 +373,7 @@ fun CreditsDialog(
                                         modifier = Modifier.size(18.dp)
                                     )
                                     Spacer(modifier = Modifier.width(8.dp))
-                                    Text("Submit a Pull Request")
+                                    Text(stringResource(R.string.submit_pull_request))
                                 }
                             }
                         }
@@ -400,7 +402,7 @@ fun CreditsDialog(
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
                                 Text(
-                                    text = "And all other contributors",
+                                    text = stringResource(R.string.and_all_contributors),
                                     style = MaterialTheme.typography.bodyMedium,
                                     fontWeight = FontWeight.Medium,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -408,7 +410,7 @@ fun CreditsDialog(
                                 )
                                 Spacer(modifier = Modifier.height(4.dp))
                                 Text(
-                                    text = "Check the GitHub repository for the complete list",
+                                    text = stringResource(R.string.check_github_list),
                                     style = MaterialTheme.typography.bodySmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     textAlign = TextAlign.Center
@@ -441,7 +443,7 @@ fun CreditsDialog(
                             modifier = Modifier.size(20.dp)
                         )
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Close")
+                        Text(stringResource(R.string.close_button))
                     }
                 }
             }

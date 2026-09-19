@@ -60,10 +60,10 @@ fun PresetImportExportScreen(
                     isLoading = true
                     exportManager.exportPresetToFile(preset, uri).fold(
                         onSuccess = {
-                            ToastHelper.showToast(context, "Preset exported successfully!")
+                            ToastHelper.showToast(context, context.getString(R.string.preset_exported_toast))
                         },
                         onFailure = { e ->
-                            ToastHelper.showToast(context, "Export failed: ${e.message}")
+                            ToastHelper.showToast(context, context.getString(R.string.export_failed_toast, e.message ?: ""))
                         }
                     )
                     isLoading = false
@@ -86,14 +86,14 @@ fun PresetImportExportScreen(
                             ToastHelper.showToast(context, error)
                         } else {
                             ToastHelper.showToast(
-                                context, 
-                                "Preset '${preset.name}' imported! (${preset.bandMode.displayName})"
+                                context,
+                                context.getString(R.string.preset_imported_toast, preset.name, preset.bandMode.displayName)
                             )
                             viewModel.loadEqualizer()
                         }
                     },
                     onFailure = { e ->
-                        ToastHelper.showToast(context, "Import failed: ${e.message}")
+                        ToastHelper.showToast(context, context.getString(R.string.import_failed_toast, e.message ?: ""))
                     }
                 )
                 isLoading = false
@@ -112,10 +112,10 @@ fun PresetImportExportScreen(
                 
                 exportManager.exportMultiplePresets(presets, uri).fold(
                     onSuccess = {
-                        ToastHelper.showToast(context, "${presets.size} presets exported!")
+                        ToastHelper.showToast(context, context.getString(R.string.batch_export_success_toast, presets.size))
                     },
                     onFailure = { e ->
-                        ToastHelper.showToast(context, "Batch export failed: ${e.message}")
+                        ToastHelper.showToast(context, context.getString(R.string.batch_export_failed_toast, e.message ?: ""))
                     }
                 )
                 isLoading = false
@@ -139,13 +139,13 @@ fun PresetImportExportScreen(
                             }
                         }
                         ToastHelper.showToast(
-                            context, 
-                            "Imported $successCount of ${presets.size} presets"
+                            context,
+                            context.getString(R.string.batch_import_success_toast, successCount, presets.size)
                         )
                         viewModel.loadEqualizer()
                     },
                     onFailure = { e ->
-                        ToastHelper.showToast(context, "Batch import failed: ${e.message}")
+                        ToastHelper.showToast(context, context.getString(R.string.batch_import_failed_toast, e.message ?: ""))
                     }
                 )
                 isLoading = false
@@ -484,13 +484,13 @@ fun PresetImportExportScreen(
     
     if (showDeleteDialog && presetToDelete != null) {
         ModernConfirmDialog(
-            title = "Delete Preset",
-            message = "Are you sure you want to delete '${presetToDelete!!.name}'? This will remove it from your preset list and cannot be undone.",
+            title = stringResource(R.string.delete_preset_title),
+            message = stringResource(R.string.delete_preset_confirm_message, presetToDelete!!.name),
             icon = Icons.Default.Delete,
             onConfirm = {
                 scope.launch {
                     viewModel.deletePreset(presetToDelete!!)
-                    ToastHelper.showToast(context, "Preset '${presetToDelete!!.name}' deleted")
+                    ToastHelper.showToast(context, context.getString(R.string.preset_deleted_toast, presetToDelete!!.name))
                     viewModel.loadEqualizer()
                     showDeleteDialog = false
                     presetToDelete = null
